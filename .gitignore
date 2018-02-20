@@ -1,3 +1,8 @@
 .DS_Store
-work
+
+work/Include
+work/Lib
+work/Scripts
+work/tcl
+
 
