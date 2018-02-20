@@ -1,10 +1,7 @@
-import nltk
-from nltk.tokenize import sent_tokenize as SENT_TOKENIZE
-from nltk.tokenize import RegexpTokenizer
 import xml.etree.ElementTree as ET
 import re as RE
-
-nltk.download('punkt')
+from nltk.tokenize import sent_tokenize as SENT_TOKENIZE
+from nltk.tokenize import RegexpTokenizer
 
 WORD_TOKENIZER = RegexpTokenizer(r'\w+')
 
@@ -83,12 +80,14 @@ for sent in raw_sentences:
     valid_sentence_count += 1
 
 # Answer: longest sentence(s)
+print "-----------------"
 print "=> Longest sentences (" + str(len(longest_senteces)) + "): "
 for sent in longest_senteces:
     print "  - " + sent
 # Answer: avg count of unique entity per valid sentence
-print "Unique entity count aggregated by sentence: " + str(total_entity_count)
-print "Sentence count: " + str(valid_sentence_count)
+print "-----------------"
+print "Sum of unique entity count aggregated by sentence: " + str(total_entity_count)
+print "Valid sentence count: " + str(valid_sentence_count)
 print "=> Avg unique entity count per sentence: " + str(total_entity_count/float(valid_sentence_count))
 
 
